@@ -1,3 +1,9 @@
+"""
+Модуль контроллера игры.
+
+Связывает модели (игровая логика) и представления (отрисовка),
+управляет игровым циклом, обрабатывает ввод пользователя.
+"""
 import pygame
 from models.game import Game2048
 from views.game_view import GameView
@@ -7,8 +13,21 @@ from config import *
 
 
 class GameController:
+    """
+    Основной контроллер игры 2048.
+    
+    Координирует взаимодействие между игровой логикой и отрисовкой,
+    обрабатывает пользовательский ввод, управляет игровым циклом
+    и состояниями (меню, игра, пауза).
+    """
     
     def __init__(self):
+        """
+        Инициализирует контроллер игры.
+        
+        Создает окно Pygame, инициализирует модель игры, view-компоненты
+        и менеджер сохранений.
+        """
         pygame.init()
         self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         pygame.display.set_caption(TITLE)
