@@ -1,96 +1,96 @@
-# 2048 Game
+# 2048
 
-A Python implementation of the popular 2048 puzzle game using Pygame. Slide numbered tiles on a grid to combine them and reach the 2048 tile!
+Реализация популярной головоломки 2048 на Python с использованием Pygame. Двигайте плитки с числами, объединяйте их и постарайтесь дойти до заветной плитки 2048!
 
-## About
+## О проекте
 
-This is my take on the classic 2048 game. I built it to practice Python and learn game development with Pygame. The game follows the original rules - use arrow keys to slide tiles, combine matching numbers, and try to reach 2048 (or go even higher if you're up for the challenge).
+Моя версия классической игры 2048. Сделал её, чтобы попрактиковаться в Python и разобраться с разработкой игр на Pygame. Игра полностью следует оригинальным правилам - используй стрелки, объединяй одинаковые числа и пытайся дойти до 2048 (а если получится, можно и дальше продолжить).
 
-## Features
+## Возможности
 
-- Clean MVC architecture for maintainable code
-- Smooth gameplay with Pygame
-- Score tracking
-- Save/load game functionality
-- Win/lose detection
-- Auto-save on exit
+- Чистая MVC архитектура для удобства поддержки
+- Плавный геймплей на Pygame
+- Отслеживание очков
+- Сохранение и загрузка игры
+- Определение победы/поражения
+- Автосохранение при выходе
 
-## Getting Started
+## Как запустить
 
-### Requirements
+### Требования
 
-- Python 3.8 or higher
+- Python 3.8 или выше
 - Pygame 2.5.0+
 
-### Installation
+### Установка
 
-1. Clone this repository:
+1. Клонируйте репозиторий:
 ```bash
-git clone https://github.com/yourusername/2048.git
+git clone https://github.com/presenceofthemoon/2048.git
 cd 2048
 ```
 
-2. Install dependencies:
+2. Установите зависимости:
 ```bash
 pip install -r requirements.txt
 ```
 
-### How to Play
+### Как играть
 
-Run the game:
+Запустите игру:
 ```bash
 python main.py
 ```
 
-**Controls:**
-- Arrow Keys - Move tiles
-- ESC - Quit game
-- R - Restart game
+**Управление:**
+- Стрелки - двигать плитки
+- ESC - выйти из игры
+- R - начать заново
 
-**Rules:**
-- Use arrow keys to slide all tiles in one direction
-- When two tiles with the same number touch, they merge into one
-- After each move, a new tile (2 or 4) appears in a random empty spot
-- The game ends when you can't make any more moves
-- Reach 2048 to win (but you can keep playing to get an even higher score!)
+**Правила:**
+- Используй стрелки, чтобы двигать все плитки в одну сторону
+- Когда две плитки с одинаковым числом соприкасаются, они объединяются
+- После каждого хода появляется новая плитка (2 или 4) в случайном месте
+- Игра заканчивается, когда нельзя сделать ход
+- Достигни 2048, чтобы победить (но можно продолжать дальше и набирать больше очков!)
 
-## Project Structure
+## Структура проекта
 
 ```
 2048/
-├── models/          # Game logic and data models
-│   ├── game.py      # Core game mechanics
-│   └── tile.py      # Tile class
-├── views/           # UI rendering
-│   ├── game_view.py # Game board visualization
-│   └── menu_view.py # Menu interface
-├── controllers/     # Game flow control
+├── models/          # Логика игры и модели данных
+│   ├── game.py      # Основная механика игры
+│   └── tile.py      # Класс плитки
+├── views/           # Отрисовка интерфейса
+│   ├── game_view.py # Визуализация игрового поля
+│   └── menu_view.py # Интерфейс меню
+├── controllers/     # Управление ходом игры
 │   └── game_controller.py
-├── utils/           # Helper utilities
+├── utils/           # Вспомогательные утилиты
 │   └── save_manager.py
-├── tests/           # Unit tests
+├── tests/           # Юнит-тесты
 │   └── test_game.py
-├── main.py          # Entry point
-└── requirements.txt # Dependencies
+├── main.py          # Точка входа
+└── requirements.txt # Зависимости
 ```
 
-## Development
+## Разработка
 
-The codebase uses a Model-View-Controller pattern to keep things organized:
-- **Models** handle game state and logic
-- **Views** take care of rendering
-- **Controllers** manage user input and game flow
+В проекте используется паттерн Model-View-Controller:
+- **Models** - состояние игры и логика
+- **Views** - отрисовка
+- **Controllers** - обработка ввода и управление игрой
 
-### Running Tests
+### Запуск тестов
 
 ```bash
 python -m pytest tests/
 ```
 
-## License
+## Лицензия
 
-Feel free to use this code for learning or your own projects.
+Можете свободно использовать код для обучения или своих проектов.
 
-## Acknowledgments
+## Благодарности
 
-Based on the original [2048 game](https://github.com/gabrielecirulli/2048) by Gabriele Cirulli.
+Основано на оригинальной [игре 2048](https://github.com/gabrielecirulli/2048) от Gabriele Cirulli.
