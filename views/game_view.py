@@ -34,6 +34,7 @@ class GameView:
         self._draw_header(game)
         self._draw_grid()
         self._draw_tiles(game)
+        self._draw_menu_button()
         
         if game.game_over:
             self._draw_game_over()
@@ -45,10 +46,10 @@ class GameView:
         title_rect = title.get_rect(center=(SCREEN_WIDTH // 2, 60))
         self.screen.blit(title, title_rect)
         
-        score_text = self.font_score.render(f"Score: {game.score}", True, TEXT_COLOR_LIGHT)
+        score_text = self.font_score.render(f"Счёт: {game.score}", True, TEXT_COLOR_LIGHT)
         self.screen.blit(score_text, (20, 100))
         
-        hint = self.font_small.render("Use arrow keys", True, TEXT_COLOR_LIGHT)
+        hint = self.font_small.render("Используй стрелки", True, TEXT_COLOR_LIGHT)
         hint_rect = hint.get_rect(center=(SCREEN_WIDTH // 2, 130))
         self.screen.blit(hint, hint_rect)
     
@@ -88,11 +89,11 @@ class GameView:
         overlay.fill(BACKGROUND_COLOR)
         self.screen.blit(overlay, (0, 0))
         
-        text = self.font_large.render("Game Over!", True, TEXT_COLOR_LIGHT)
+        text = self.font_large.render("Игра окончена!", True, TEXT_COLOR_LIGHT)
         text_rect = text.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2))
         self.screen.blit(text, text_rect)
         
-        restart_text = self.font_small.render("Press R to restart", True, TEXT_COLOR_LIGHT)
+        restart_text = self.font_small.render("Нажми R для перезапуска", True, TEXT_COLOR_LIGHT)
         restart_rect = restart_text.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 + 50))
         self.screen.blit(restart_text, restart_rect)
     
@@ -102,10 +103,30 @@ class GameView:
         overlay.fill(BACKGROUND_COLOR)
         self.screen.blit(overlay, (0, 0))
         
-        text = self.font_large.render("You Win!", True, (237, 194, 46))
+        text = self.font_large.render("Победа!", True, (237, 194, 46))
         text_rect = text.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2))
         self.screen.blit(text, text_rect)
         
-        continue_text = self.font_small.render("Press C to continue", True, TEXT_COLOR_LIGHT)
+        continue_text = self.font_small.render("Нажми C для продолжения", True, TEXT_COLOR_LIGHT)
         continue_rect = continue_text.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 + 50))
         self.screen.blit(continue_text, continue_rect)
+    
+    def _draw_menu_button(self):
+        """Рисует кнопку выхода в главное меню."""
+        button_rect = self.get_menu_button_rect()
+        
+        mouse_pos = pygame.mouse.get_pos()
+        if button_rect.collidepoint(mouse_pos):
+            color = (237, 194, 46)
+        else:
+            color = GRID_COLOR
+        
+        pygame.draw.rect(self.screen, color, button_rect, border_radius=5)
+        
+        text = self.font_small.render("Меню", True, TEXT_COLOR_LIGHT)
+        text_rect = text.get_rect(center=button_rect.center)
+        self.screen.blit(text, text_rect)
+    
+    def get_menu_button_rect(self) -> pygame.Rect:
+        """Возвращает прямоугольник кнопки меню для проверки кликов."""
+        return pygame.Rect(SCREEN_WIDTH - 100, 20, 80, 40)

@@ -36,9 +36,9 @@ class MenuView:
         self.screen.blit(title, title_rect)
         
         buttons = [
-            ("New Game", "new_game", 250),
-            ("Continue", "continue", 320),
-            ("Quit", "quit", 390),
+            ("Новая игра", "new_game", 250),
+            ("Продолжить", "continue", 320),
+            ("Выход", "quit", 390),
         ]
         
         mouse_pos = pygame.mouse.get_pos()
@@ -71,14 +71,14 @@ class MenuView:
         overlay.fill(BACKGROUND_COLOR)
         self.screen.blit(overlay, (0, 0))
         
-        title = self.font_medium.render("Paused", True, TEXT_COLOR_LIGHT)
+        title = self.font_medium.render("Пауза", True, TEXT_COLOR_LIGHT)
         title_rect = title.get_rect(center=(SCREEN_WIDTH // 2, 200))
         self.screen.blit(title, title_rect)
         
         buttons = [
-            ("Resume", "resume", 280),
-            ("Restart", "restart", 350),
-            ("Main Menu", "menu", 420),
+            ("Продолжить", "resume", 280),
+            ("Начать заново", "restart", 350),
+            ("Главное меню", "menu", 420),
         ]
         
         mouse_pos = pygame.mouse.get_pos()

@@ -62,9 +62,9 @@ class GameController:
                 mouse_pos = pygame.mouse.get_pos()
                 
                 buttons = [
-                    ("New Game", "new_game", 250),
-                    ("Continue", "continue", 320),
-                    ("Quit", "quit", 390),
+                    ("Новая игра", "new_game", 250),
+                    ("Продолжить", "continue", 320),
+                    ("Выход", "quit", 390),
                 ]
                 
                 for text, action, y_pos in buttons:
@@ -93,6 +93,15 @@ class GameController:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
+            
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = pygame.mouse.get_pos()
+                menu_button_rect = self.game_view.get_menu_button_rect()
+                
+                if menu_button_rect.collidepoint(mouse_pos):
+                    self.save_manager.save(self.game)
+                    self.in_game = False
+                    self.paused = False
             
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
@@ -132,9 +141,9 @@ class GameController:
                     mouse_pos = pygame.mouse.get_pos()
                     
                     buttons = [
-                        ("Resume", "resume", 280),
-                        ("Restart", "restart", 350),
-                        ("Main Menu", "menu", 420),
+                        ("Продолжить", "resume", 280),
+                        ("Начать заново", "restart", 350),
+                        ("Главное меню", "menu", 420),
                     ]
                     
                     for text, action, y_pos in buttons:

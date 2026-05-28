@@ -9,7 +9,7 @@
 SCREEN_WIDTH = 450
 SCREEN_HEIGHT = 600
 FPS = 60
-TITLE = "2048 Game"
+TITLE = "2048 - Игра"
 
 # Настройки сетки
 GRID_SIZE = 4

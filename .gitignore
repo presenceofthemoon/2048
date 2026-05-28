@@ -38,4 +38,5 @@ Thumbs.db
 
 # Game saves
 *.sav
+*.json
 saves/
