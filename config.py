@@ -1,19 +1,29 @@
+"""
+Конфигурация игры 2048.
 
+Все настройки внешнего вида, размеров, цветов и констант игры.
+Изменяя значения здесь, можно настроить весь визуал игры.
+"""
+
+# Настройки окна
 SCREEN_WIDTH = 450
 SCREEN_HEIGHT = 600
 FPS = 60
 TITLE = "2048 Game"
 
+# Настройки сетки
 GRID_SIZE = 4
 CELL_SIZE = 100
 GRID_PADDING = 10
 GRID_OFFSET_X = (SCREEN_WIDTH - (GRID_SIZE * CELL_SIZE + (GRID_SIZE + 1) * GRID_PADDING)) // 2
 GRID_OFFSET_Y = 150
 
+# Базовые цвета
 BACKGROUND_COLOR = (250, 248, 239)
 GRID_COLOR = (205, 193, 180)
 EMPTY_CELL_COLOR = (238, 228, 218)
 
+# Цвета плиток в зависимости от значения
 TILE_COLORS = {
     2: (238, 228, 218),
     4: (237, 224, 200),
@@ -28,10 +38,13 @@ TILE_COLORS = {
     2048: (237, 194, 46),
 }
 
+# Цвета текста
 TEXT_COLOR_LIGHT = (119, 110, 101)
 TEXT_COLOR_DARK = (249, 246, 242)
 
+# Настройки шрифтов
 FONT_SIZE = 40
 FONT_SIZE_SMALL = 25
 
+# Файл сохранения
 SAVE_FILE = "save.json"
