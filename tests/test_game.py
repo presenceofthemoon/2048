@@ -1,16 +1,25 @@
+"""
+Юнит-тесты для игры 2048.
+
+Проверяет корректность работы игровой логики:
+создание плиток, их объединение, движение и определение конца игры.
+"""
 import unittest
 from models.game import Game2048
 from models.tile import Tile
 
 
 class TestTile(unittest.TestCase):
+    """Тесты для класса Tile."""
     
     def test_tile_creation(self):
+        """Проверяет корректное создание плитки."""
         tile = Tile(2, 0, 0)
         self.assertEqual(tile.value, 2)
         self.assertFalse(tile.merged)
     
     def test_tile_double(self):
+        """Проверяет удвоение значения плитки."""
         tile = Tile(2)
         tile.double()
         self.assertEqual(tile.value, 4)
@@ -18,8 +27,10 @@ class TestTile(unittest.TestCase):
 
 
 class TestGame2048(unittest.TestCase):
+    """Тесты для основной игровой логики."""
     
     def setUp(self):
+        """Создает новую игру перед каждым тестом."""
         self.game = Game2048(4)
     
     def test_initialization(self):
