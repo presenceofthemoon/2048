@@ -1,10 +1,28 @@
+"""
+Модуль отрисовки меню.
+
+Отвечает за отображение главного меню, меню паузы и других
+интерфейсных элементов вне игрового поля.
+"""
 import pygame
 from config import *
 
 
 class MenuView:
+    """
+    Класс для отрисовки меню игры.
+    
+    Управляет визуализацией главного меню, меню паузы
+    и обработкой взаимодействия с кнопками.
+    """
     
     def __init__(self, screen: pygame.Surface):
+        """
+        Инициализирует view меню.
+        
+        Args:
+            screen: Поверхность Pygame для отрисовки
+        """
         self.screen = screen
         self.font_large = pygame.font.Font(None, 60)
         self.font_medium = pygame.font.Font(None, 40)

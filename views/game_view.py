@@ -1,11 +1,29 @@
+"""
+Модуль отрисовки игрового поля.
+
+Отвечает за визуализацию игры: рендеринг плиток, сетки, счета,
+сообщений о победе/поражении и всех визуальных элементов.
+"""
 import pygame
 from config import *
 from models.game import Game2048
 
 
 class GameView:
+    """
+    Класс для отрисовки игры 2048.
+    
+    Преобразует состояние игры из модели в визуальное представление
+    с помощью Pygame. Отвечает за цвета, шрифты, анимацию и layout.
+    """
     
     def __init__(self, screen: pygame.Surface):
+        """
+        Инициализирует view с заданным экраном.
+        
+        Args:
+            screen: Поверхность Pygame для отрисовки
+        """
         self.screen = screen
         self.font_large = pygame.font.Font(None, FONT_SIZE)
         self.font_small = pygame.font.Font(None, FONT_SIZE_SMALL)
