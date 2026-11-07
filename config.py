@@ -1,29 +1,24 @@
-"""
-Конфигурация игры 2048.
+#сборная солянка 
 
-Все настройки внешнего вида, размеров, цветов и констант игры.
-Изменяя значения здесь, можно настроить весь визуал игры.
-"""
-
-# Настройки окна
+# Окно
 SCREEN_WIDTH = 450
 SCREEN_HEIGHT = 600
 FPS = 60
-TITLE = "2048 - Игра"
+TITLE = "2048 Game"
 
-# Настройки сетки
+# Сетка
 GRID_SIZE = 4
 CELL_SIZE = 100
 GRID_PADDING = 10
 GRID_OFFSET_X = (SCREEN_WIDTH - (GRID_SIZE * CELL_SIZE + (GRID_SIZE + 1) * GRID_PADDING)) // 2
 GRID_OFFSET_Y = 150
 
-# Базовые цвета
+# Цвета
 BACKGROUND_COLOR = (250, 248, 239)
 GRID_COLOR = (205, 193, 180)
 EMPTY_CELL_COLOR = (238, 228, 218)
 
-# Цвета плиток в зависимости от значения
+# Цвета плиток
 TILE_COLORS = {
     2: (238, 228, 218),
     4: (237, 224, 200),
@@ -38,13 +33,27 @@ TILE_COLORS = {
     2048: (237, 194, 46),
 }
 
-# Цвета текста
+# Цвет текста
 TEXT_COLOR_LIGHT = (119, 110, 101)
 TEXT_COLOR_DARK = (249, 246, 242)
 
-# Настройки шрифтов
+# Шрифт
 FONT_SIZE = 40
 FONT_SIZE_SMALL = 25
 
-# Файл сохранения
+
 SAVE_FILE = "save.json"
+
+# Настройки звука
+SOUND_ENABLED = True
+MUSIC_ENABLED = True
+SOUND_VOLUME = 0.3
+MUSIC_VOLUME = 0.5
+
+# Пути к аудио файлам
+SOUNDS_DIR = "assets/sounds"
+MUSIC_FILE = f"{SOUNDS_DIR}/background_music.mp3"
+SOUND_MOVE = f"{SOUNDS_DIR}/move.wav"
+SOUND_MERGE = f"{SOUNDS_DIR}/merge.wav"
+SOUND_WIN = f"{SOUNDS_DIR}/win.wav"
+SOUND_GAMEOVER = f"{SOUNDS_DIR}/gameover.wav"
